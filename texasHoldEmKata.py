@@ -32,6 +32,17 @@ def getValue(hand):
             con2 = con
             con = ""
         last = hand[-card][0]
+    #Flush
+    last2 = ""
+    flsh = 1
+    for card in range(1,len(hand)+1):
+        if hand2[-card][1] == last2:
+            cards += 1
+        else:
+            cards = 1
+        if cards == 5:
+            return "Flush"
+        last2 = hand2[-card][1]    
     #Two Pair
     last = 0
     cards = 1
